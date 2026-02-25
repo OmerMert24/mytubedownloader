@@ -1,0 +1,11 @@
+# VS Code
+.vscode/
+tempCodeRunnerFile.*
+
+# Python
+__pycache__/
+*.pyc
+
+# Temporary download/merge files
+__video.mp4
+__audio.m4a
