@@ -31,10 +31,7 @@ pip install certifi
 git clone https://github.com/OmerMert24/mytubedownloader.git
 cd mytubedownloader
 
-# If you see another folder named "mytubedownloader", enter it:
-# cd mytubedownloader
-
-# 2) Create + activate a virtual environment
+# 2) Create and activate a virtual environment
 python3 -m venv .venv
 source .venv/bin/activate
 
