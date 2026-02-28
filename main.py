@@ -133,7 +133,7 @@ customtkinter.set_default_color_theme("blue")
 
 app = customtkinter.CTk()
 app.geometry("720x480")
-app.title("YouTube Downloader")
+app.title("MyTube Downloader")
 
 title = customtkinter.CTkLabel(app, text="Insert a YouTube link")
 title.pack(padx=10, pady=10)
@@ -142,7 +142,7 @@ url_var = tkinter.StringVar()
 link = customtkinter.CTkEntry(app, width=350, height=40, textvariable=url_var)
 link.pack()
 
-fetchBtn = customtkinter.CTkButton(app, text="Fetch Qualities", command=fetch_qualities)
+fetchBtn = customtkinter.CTkButton(app, text="Get Qualities", command=fetch_qualities)
 fetchBtn.pack(padx=10, pady=10)
 
 qualityBox = customtkinter.CTkComboBox(app, values=["(fetch qualities first)"], width=200)
