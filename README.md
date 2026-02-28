@@ -16,6 +16,7 @@ mytubedownloader is a simple youtube video downloader. It downloads video with 1
 ```bash
 pip install pytubefix
 pip install customtkinter
+brew install ffmpeg
 ```
 
 ## FFmpeg check
