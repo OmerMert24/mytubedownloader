@@ -6,22 +6,50 @@ mytubedownloader is a simple youtube video downloader. It downloads video with 1
 - Progress Percentage + Progress Bar
 
 ## Requirements
-- python 3
+- Python 3
 - `tkinter` (usually included with Python on Windows)
 - `customtkinter`
 - `pytubefix`
 - FFmpeg (installed and available in PATH)
 
-## Installation
+## Installation for Windows
 ```bash
 pip install pytubefix
 pip install customtkinter
 brew install ffmpeg
 ```
+## Installation for MacOS
+```bash
+# 1) Clone the repository
+git clone https://github.com/OmerMert24/mytubedownloader.git
+cd mytubedownloader
+
+# If you see another folder named "mytubedownloader", enter it:
+# cd mytubedownloader
+
+# 2) Create + activate a virtual environment
+python3 -m venv .venv
+source .venv/bin/activate
+
+# 3) Install Python dependencies
+pip install pytubefix customtkinter certifi
+
+# 4) Install FFmpeg (via Homebrew)
+brew --version || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install ffmpeg
+
+# 5) Run the app
+python3 main.py
+
+# If you get an SSL certificate error, run this and try again:
+# export SSL_CERT_FILE="$(python3 -c 'import certifi; print(certifi.where())')"
+# python3 main.py
+```
 
 ## FFmpeg check
 ```bash
 ffmpeg -version
+```
 
 ## Run
 ```bash
