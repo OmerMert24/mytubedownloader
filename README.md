@@ -1,4 +1,6 @@
 # mytubedownloader
+![App Screenshot](./assets/screenshot.png)
+
 mytubedownloader is a simple youtube video downloader. It downloads video with the quality you selected and merges with audio -using FFmpeg- in a mp4 file.
 
 ---
