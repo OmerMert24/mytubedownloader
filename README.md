@@ -16,8 +16,15 @@ mytubedownloader is a simple youtube video downloader. It downloads video with 1
 ```bash
 pip install pytubefix
 pip install customtkinter
-brew install ffmpeg
+pip install certifi
 ```
+### FFmpeg (Windows)
+
+1) Download an FFmpeg Windows build (from the official FFmpeg download page).
+2) Extract the `.zip` file (example folder: `C:\ffmpeg\`).
+3) Add the `bin` folder to your **PATH** (example: `C:\ffmpeg\bin`).
+4) Verify it works in CMD/PowerShell:
+
 ## Installation for MacOS
 ```bash
 # 1) Clone the repository
@@ -53,7 +60,8 @@ ffmpeg -version
 
 ## Run
 ```bash
-python main.py
+python main.py # Windows
+python3 main.py # MacOS
 ```
 
 ## Notes
