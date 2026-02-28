@@ -63,18 +63,19 @@ brew install ffmpeg
 
 # 5) Run the app
 python3 main.py
-
-# If you get an SSL certificate error, run this and try again:
-# export SSL_CERT_FILE="$(python3 -c 'import certifi; print(certifi.where())')"
-# python3 main.py
 ```
+
+## SSL Certificate Error (MacOS)
+If you see Certificate error, run:
+`export SSL_CERT_FILE="$(python3 -c 'import certifi; print(certifi.where())')"`
+Then run the app again.
+
 ---
 
 ## FFmpeg check
 ```bash
 ffmpeg -version
 ```
-
 ---
 
 ## Run
