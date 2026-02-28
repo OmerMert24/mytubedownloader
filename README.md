@@ -67,7 +67,9 @@ python3 main.py
 
 ## SSL Certificate Error (MacOS)
 If you see Certificate error, run:
-`export SSL_CERT_FILE="$(python3 -c 'import certifi; print(certifi.where())')"`
+```
+export SSL_CERT_FILE="$(python3 -c 'import certifi; print(certifi.where())')"
+```
 Then run the app again.
 
 ---
