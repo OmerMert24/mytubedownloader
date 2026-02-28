@@ -95,11 +95,13 @@ def fetch_qualities():
         finishLabel.configure(text="")
 
         qualities = get_available_resolutions(yt)
+
         if not qualities:
             raise RuntimeError("No MP4 video-only streams found for this video.")
 
+        app.available_qualities = qualities
         qualityBox.configure(values=qualities)
-        qualityBox.set(qualities[0])  # default: highest available
+        qualityBox.set("Choose quality")  
         finishLabel.configure(text="Qualities loaded.", text_color="green")
 
     except Exception as e:
@@ -110,15 +112,20 @@ def startDownload():
         yt = getattr(app, "ytObject", None)
         ytLink = link.get().strip()
 
-        # If user clicks Download without Fetch, create object anyway
+        if not ytLink:
+            raise RuntimeError("Please paste a YouTube link first.")
+
+        # If user clicks Download without Fetch, still create object
         if yt is None:
             yt = YouTube(ytLink, on_progress_callback=on_progress)
             app.ytObject = yt
             title.configure(text=yt.title, text_color="white")
 
         selected_res = qualityBox.get().strip()
-        if not selected_res or "Fetch" in selected_res:
-            raise RuntimeError("Please fetch qualities and select one first.")
+        available = getattr(app, "available_qualities", [])
+
+        if selected_res not in available:
+            raise RuntimeError("Please choose a quality first.")
 
         finishLabel.configure(text="Downloading...", text_color="white")
         download_with_resolution(yt, selected_res)
@@ -145,9 +152,11 @@ link.pack()
 fetchBtn = customtkinter.CTkButton(app, text="Get Qualities", command=fetch_qualities)
 fetchBtn.pack(padx=10, pady=10)
 
-qualityBox = customtkinter.CTkComboBox(app, values=["(fetch qualities first)"], width=200)
-qualityBox.set("(fetch qualities first)")
+qualityBox = customtkinter.CTkComboBox(app, values=[], width=200)
+qualityBox.set("")
 qualityBox.pack(padx=10, pady=10)
+
+app.available_qualities = []
 
 finishLabel = customtkinter.CTkLabel(app, text="")
 finishLabel.pack()
