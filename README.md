@@ -14,7 +14,7 @@ mytubedownloader is a simple youtube video downloader. It downloads video with t
 
 ## How to Use
 1. Paste video link
-2. Click **Fetch Qualities**
+2. Click **Get Qualities**
 3. Select the quality
 4. Click **Download**
 
